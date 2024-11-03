@@ -1,11 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+import myPhoto from "../../Assets/my-photo.jpg"; // Correct file path
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import About from "../About/About"; // Adjust this if the About component is inside another folder
-
+import About from "../About/About"; // Adjust if the About component is inside another folder
 
 function Home() {
   return (
@@ -34,18 +33,23 @@ function Home() {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
-                src={homeLogo}
+                src={myPhoto} // Your image file
                 alt="home pic"
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                style={{
+                  maxHeight: "450px",
+                  borderRadius: "50%", // Circular cropping
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+                  border: "3px solid  #000000", // Optional white border
+                  objectFit: "cover", // Ensures image covers the rounded shape
+                }}
               />
             </Col>
           </Row>
         </Container>
       </Container>
       <Home2 />
-     {/* <About /> */}
-        
+      {/* <About /> */}
     </section>
   );
 }
